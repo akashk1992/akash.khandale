@@ -44,8 +44,6 @@ Google Fonts are loaded remotely. No backend or contact form service is required
 
 Build with `npm ci` and `npm run build`, then serve `dist/`. The existing `.openai/hosting.json` contains a Sites project identifier, not credentials; it is only needed for Sites hosting. npm scripts do not publish the website.
 
-## Repository hygiene
-
 ## GitHub Pages
 
 `.github/workflows/pages.yml` builds and deploys the static site on pushes to `main`, or through a manual Actions run. Set repository Settings > Pages > Source to GitHub Actions before deploying. GitHub Pages requires a public repository on GitHub Free, or a supported paid plan for this private repository.
