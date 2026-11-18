@@ -8,7 +8,8 @@
   .motion-ready .observatory{animation:exhibit-arrive 1.8s .1s both}
   .motion-ready .orbit-label{animation:arrive 1s 1.2s both}
   .projects{perspective:1200px}
-  .project.visible{transform:rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transition:opacity .85s,transform .3s ease-out;transform-style:preserve-3d}
+  .project.visible{transform:translateY(var(--scroll-lift,0px)) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transition:opacity .85s,transform .3s ease-out;transform-style:preserve-3d}
+  .project-art{border-color:rgba(224,166,121,calc(.12 + var(--spotlight,0)*.5));box-shadow:0 12px 35px rgba(224,166,121,calc(var(--spotlight,0)*.09))}
   .project-art{position:relative}
   .project-art:after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--light-x,50%) var(--light-y,50%),#fff2,transparent 55%);opacity:0;transition:opacity .3s}
   .project:hover .project-art:after{opacity:1}

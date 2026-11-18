@@ -1,5 +1,16 @@
 node_modules/
 dist/
+outputs/
+.vite/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+coverage/
+*.local
 *.tar.gz
 *.log
 www.linkedin.com_in_akashkhandale_details_experience_.png

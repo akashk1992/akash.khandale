@@ -1,0 +1,27 @@
+/* Small annotations still need to be readable at ordinary viewing distances. */
+.eyebrow{font-size:11px;line-height:1.65;letter-spacing:1.4px}
+.orbit-label{font-size:12px;letter-spacing:1px;line-height:1.5;color:#d4c9bc;background:#080b10df;padding:5px 8px;border:1px solid #ffffff15}
+.label-ai{top:18%;left:43%}.label-cloud{right:3%}.label-product{bottom:20%;left:10%}
+.hero-proof{font-size:11px;line-height:1.7;letter-spacing:1px;color:#b3b7c0;flex-wrap:wrap}
+.scroll-cue{font-size:12px;line-height:1.5;letter-spacing:1.2px;color:#c2c6cd}
+.hero-index{font-size:10px;color:#9ca4b1;letter-spacing:1px}
+.scene-caption{font-size:10px;letter-spacing:1px;color:#bab9b9}.scene-number{color:#9da5af}
+.coordinate{font-size:9px;color:#919aa8;letter-spacing:1.2px}
+.section-note,.tags,.project-meta,.art-index{font-size:11px;line-height:1.6;letter-spacing:1px}
+.section-note,.tags{color:#a3abb7}.project-meta{color:#c7aa91}
+.expertise-strip>span{font-size:10px;color:#a3abb7}.expertise-strip>div{font-size:14px}
+.project-placeholder a{font-size:12px;letter-spacing:.8px;padding-block:10px}
+.email-placeholder{font-size:12px;color:#a3abb7;line-height:1.7}
+.brand{font-size:12px}.brand-sub{font-size:10px;letter-spacing:1px;line-height:1.4}
+nav{font-size:14px}footer{font-size:12px}.footer-name span{font-size:10px;letter-spacing:1px}footer>a:last-child{font-size:11px}
+@media(max-width:1000px){.orbit-label{font-size:11px}.label-cloud{right:16%}.expertise-strip>div{font-size:12px}}
+@media(max-width:650px){
+  .eyebrow{font-size:10px;letter-spacing:1px}.hero-proof{font-size:10px;gap:8px;letter-spacing:.5px}
+  .hero{min-height:1010px;padding-bottom:470px}.observatory{bottom:65px}
+  .orbit-label{font-size:11px;letter-spacing:.6px}.label-ai{top:7%;left:40%}.label-cloud{right:7%;top:44%}.label-product{bottom:18%;left:10%}
+  .scene-caption{font-size:9px;left:18%;bottom:6%;gap:8px}.scene-number{margin-left:3px}
+  .scroll-cue{font-size:11px;bottom:25px}.hero-index{font-size:9px;bottom:50px;right:7%}
+  .brand{font-size:10px}.brand-sub{font-size:8px;letter-spacing:.5px}.nav-contact{font-size:12px}
+  .expertise-strip>div{font-size:12px}.tags,.project-meta{font-size:10px}
+  .email-placeholder{font-size:11px}.footer-name span{font-size:9px}
+}
