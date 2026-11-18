@@ -1,4 +1,6 @@
 import './style.css';
+import './motion.css';
+import './motion.js';
 import * as THREE from 'three';
 import { profile } from '../site.config.js';
 
@@ -77,7 +79,17 @@ try {
   new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;}).observe(canvas);
   const clock = new THREE.Clock();let frame;
   function draw(){frame=requestAnimationFrame(draw);if(!visible||document.hidden)return;const t=clock.getElapsedTime();
-    if(!reduced.matches){sculpture.rotation.y= -.28 + t*.055 + px + scroll*.5;sculpture.rotation.x=.28+py+scroll*.18;sculpture.position.y=Math.sin(t*.6)*.06;core.rotation.y=t*.12;rings[0].rotation.z=t*.11;rings[2].rotation.z=-t*.08;}
+    if(!reduced.matches){
+      sculpture.rotation.y= -.28 + t*.055 + px + scroll*.85;
+      sculpture.rotation.x=.28+py+scroll*.35;
+      sculpture.position.y=Math.sin(t*.6)*.06+scroll*.18;
+      core.rotation.y=t*.12;
+      rings.forEach((ring,i)=>{
+        ring.position.z=scroll*(i-1.5)*.4;
+        ring.rotation.z=(i%2?-1:1)*t*(.035+i*.015)+scroll*(i-1.5)*.18;
+      });
+      camera.position.z=10.8-scroll*.6;
+    }
     renderer.render(scene,camera);
   }draw();
   canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();cancelAnimationFrame(frame);document.documentElement.classList.add('no-webgl');});
