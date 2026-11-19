@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: process.env.GITHUB_PAGES === 'true' ? '/akashk-portfolio-website/' : '/',
+  base: process.env.GITHUB_PAGES === 'true' ? '/akash.khandale/' : '/',
 });

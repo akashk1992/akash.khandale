@@ -48,7 +48,7 @@ Build with `npm ci` and `npm run build`, then serve `dist/`. The existing `.open
 
 `.github/workflows/pages.yml` builds and deploys the static site on pushes to `main`, or through a manual Actions run. Set repository Settings > Pages > Source to GitHub Actions before deploying. GitHub Pages requires a public repository on GitHub Free, or a supported paid plan for this private repository.
 
-The workflow sets `GITHUB_PAGES=true`; `vite.config.js` then uses `/akashk-portfolio-website/` as the asset base. Local development and other hosting retain `/`. The expected site address after a successful deployment is `https://akashk1992.github.io/akashk-portfolio-website/`.
+The workflow sets `GITHUB_PAGES=true`; `vite.config.js` then uses `/akash.khandale/` as the asset base. Local development and other hosting retain `/`. The site address after a successful deployment is `https://akashk1992.github.io/akash.khandale/`.
 
 ## Repository hygiene
 
