@@ -4,6 +4,7 @@ import './readability.css';
 import './story.css';
 import { story } from './story.js';
 import './motion.js';
+import './approach.js';
 import * as THREE from 'three';
 import { profile } from '../site.config.js';
 
