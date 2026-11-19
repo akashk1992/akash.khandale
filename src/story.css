@@ -13,7 +13,6 @@
   .story-enabled .scroll-cue{bottom:30px}
   .story-enabled .hero-index{bottom:35px}
 }
-.story-enabled .hero[data-chapter="1"] .orbit-label,.story-enabled .hero[data-chapter="2"] .orbit-label{opacity:0}
 .story-enabled .hero[data-chapter="1"] .observatory{background:radial-gradient(ellipse at center,#2d8fba12,transparent 65%)}
 .story-enabled .hero[data-chapter="2"] .observatory{background:radial-gradient(ellipse at center,#9670ed16,transparent 65%)}
 @media(min-width:901px) and (min-height:600px){.story-enabled .observatory{right:0;width:53%}}

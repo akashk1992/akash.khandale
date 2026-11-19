@@ -18,6 +18,12 @@ const panels = chapters.slice(1).map(([label, title, copy]) => {
 const first = hero.querySelector('.hero-copy');
 const allPanels = [first, ...panels];
 const index = hero.querySelector('.hero-index');
+const figureLabels = [...hero.querySelectorAll('.orbit-label')];
+const chapterLabels = [
+  ['IDEAS & POSSIBILITY', 'PRODUCT THINKING', 'REAL-WORLD IMPACT'],
+  ['FRONTEND & EXPERIENCE', 'BACKEND & DATA', 'CLOUD ARCHITECTURE'],
+  ['AI AGENTS', 'INTELLIGENT WORKFLOWS', 'CONNECTED TOOLS'],
+];
 const desktop = matchMedia('(min-width: 901px) and (min-height: 600px) and (prefers-reduced-motion: no-preference)');
 let current = -1;
 export const story = { progress: 0, chapter: 0, enabled: false };
@@ -37,6 +43,12 @@ function update() {
       panel.setAttribute('aria-hidden', String(!active));
     });
     index.textContent = chapters[next][0];
+    figureLabels.forEach((label, i) => {
+      const marker = document.createElement('span');
+      marker.className = 'tiny-square';
+      marker.setAttribute('aria-hidden', 'true');
+      label.replaceChildren(marker, document.createTextNode(chapterLabels[next][i]));
+    });
     current = next;
   }
   hero.style.setProperty('--chapter-progress', String(story.progress));
