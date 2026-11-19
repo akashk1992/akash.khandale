@@ -2,6 +2,12 @@ import './approach.css';
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const stages = [...document.querySelectorAll('.capability')];
+const approach = document.querySelector('#approach');
+const track = document.createElement('div');
+track.className = 'approach-track';
+approach.before(track);
+track.append(approach);
+const pinned = matchMedia('(min-width: 651px) and (min-height: 600px) and (prefers-reduced-motion: no-preference)');
 const graphics = [
   `<div class="architecture-graphic"><div class="interface-window"><div class="window-bar"><i></i><i></i><i></i></div><div class="interface-layout"><div class="interface-sidebar"></div><div class="interface-content"><b></b><b></b><b></b></div></div><span>EXPERIENCE</span></div><div class="service-module">APPLICATION SERVICES</div><div class="database-module">DATA FOUNDATION</div><div class="system-connector"></div></div>`,
   `<div class="cloud-graphic"><div class="cloud-orbit orbit-one"></div><div class="cloud-orbit orbit-two"></div><div class="cloud-core">CLOUD<span>AWS / AZURE</span></div><div class="cloud-node node-one">BUILD</div><div class="cloud-node node-two">DEPLOY</div><div class="cloud-node node-three">EVOLVE</div></div>`,
@@ -34,9 +40,17 @@ const observer = new IntersectionObserver(entries => entries.forEach(entry => {
 stages.forEach(stage => observer.observe(stage));
 let pending = false;
 function update() {
-  stages.forEach(stage => {
+  track.classList.toggle('approach-pinned', pinned.matches);
+  const trackRect = track.getBoundingClientRect();
+  const chapterProgress = Math.max(0, Math.min(1, -trackRect.top / Math.max(1, trackRect.height - innerHeight)));
+  const chapter = Math.min(2, Math.floor(chapterProgress * 3));
+  stages.forEach((stage, i) => {
+    const active = !pinned.matches || chapter === i;
+    stage.classList.toggle('chapter-active', active);
+    stage.inert = !active;
+    stage.setAttribute('aria-hidden', String(!active));
     const rect = stage.getBoundingClientRect();
-    const progress = reduced.matches ? .5 : Math.max(0, Math.min(1, (innerHeight - rect.top) / (innerHeight + rect.height)));
+    const progress = reduced.matches ? .5 : pinned.matches ? Math.max(0, Math.min(1, chapterProgress * 3 - i)) : Math.max(0, Math.min(1, (innerHeight - rect.top) / (innerHeight + rect.height)));
     stage.style.setProperty('--exhibit-scroll', progress.toFixed(3));
   });
   pending = false;
@@ -45,6 +59,7 @@ window.addEventListener('scroll', () => {
   if (!pending) { pending = true; requestAnimationFrame(update); }
 }, { passive: true });
 window.addEventListener('resize', update);
+pinned.addEventListener('change', update);
 reduced.addEventListener('change', () => {
   stages.forEach(stage => stage.querySelectorAll('animateMotion').forEach(el => el.remove()));
   update();

@@ -17,3 +17,18 @@
 @media(prefers-reduced-motion:no-preference){.capability-visual{transition:background .6s}.exhibit-active .cloud-node{animation:module-float 3s ease-in-out infinite alternate}.exhibit-active .cloud-node:nth-last-child(2){animation-delay:-1s}.exhibit-active .team-center{animation:goal-glow 2s ease-in-out infinite alternate}@keyframes module-float{to{translate:0 -12px}}@keyframes goal-glow{to{box-shadow:0 0 55px #d2a77840}}}
 @media(max-width:900px){.capability,.capability+.capability{gap:25px;grid-template-columns:1fr 1fr}.capability-visual{height:350px}.architecture-graphic{inset:35px 18px}.interface-window{height:140px}.service-module{top:155px}.database-module{top:235px}.cloud-graphic{inset:25px 12px}.cloud-core{width:110px;height:110px;font-size:18px}.cloud-node{padding:10px;font-size:9px}.team-graphic{inset:30px 10px}.team-node{font-size:8px;padding:10px 6px}.team-center{width:95px;height:95px;font-size:10px}.capability p{font-size:15px}.capability .tags{font-size:10px}}
 @media(max-width:650px){.capability,.capability+.capability{grid-template-columns:1fr;gap:30px;padding:40px 0;min-height:auto}.capability-copy{padding-top:0}.cap-number{margin-bottom:18px}.capability h3{font-size:34px}.capability p{max-width:none;margin-top:18px}.capability-visual{height:350px}.capability .tags{margin-top:20px}.architecture-graphic{max-width:360px;margin:auto}.cloud-graphic,.team-graphic{max-width:360px;margin:auto}}
+.approach-pinned{height:250svh;position:relative}
+.approach-pinned .approach{position:sticky;top:0;height:100svh;padding:30px 7.2%;background:#080b10;display:flex;flex-direction:column;overflow:hidden}
+.approach-pinned .section-heading{margin-bottom:16px;flex-shrink:0}
+.approach-pinned .approach-intro{gap:30px;flex-shrink:0}
+.approach-pinned .approach-intro h2{font-size:clamp(26px,2.5vw,38px);letter-spacing:-1px}
+.approach-pinned .approach-intro p{font-size:12px;line-height:1.7}
+.approach-pinned .capabilities{position:relative;flex:1;min-height:0;margin-top:25px}
+.approach-pinned .capability,.approach-pinned .capability+.capability{position:absolute;inset:0;min-height:0;padding:20px 0;border-bottom:0;opacity:0;visibility:hidden;transform:translateY(20px);transition:opacity .4s,transform .5s;pointer-events:none}
+.approach-pinned .capability.chapter-active{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+.approach-pinned .capability-copy{padding-top:0}
+.approach-pinned .capability-visual{height:min(380px,48svh)}
+.approach-pinned .capability h3{font-size:clamp(30px,3vw,46px)}
+.approach-pinned .capability p{font-size:15px;line-height:1.7;margin-top:20px}
+.approach-pinned .capability .tags{margin-top:20px}
+@media(max-width:900px){.approach-pinned .approach-intro{grid-template-columns:1fr}.approach-pinned .approach-intro p{display:none}.approach-pinned .capability-visual{height:350px;max-height:52svh}.approach-pinned .section-note{display:none}}
